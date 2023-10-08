@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+    <nav>
+        <img src= "{{url_for('static', filename='/uploads/fakenews-1.jpg')}}" class="logo" >
+        <ul class="nav-page">  
+            <li><a href='/'>Home</a></li>              
+            <li><a href="/help">Help</a></li>
+            <li><a href="/about">About</a></li>
+        </ul>
+    </nav>
+
+    <video autoplay loop class="bg-video" muted plays-inline>
+        <source src="{{url_for('static', filename='/uploads/bg-video.mp4')}}" type="video/mp4">
+    </video>
+
+    <div class="about-outer">
+        <h1 style="color:gold;">About</h1>
+        <div class="about-content">
+           <p>
+            What is Fake news Detection??
+Detecting fake news is a layered process that involves analysis of the news contents to determine the truthfulness of the news.
+It is a subtask of text classification  and is often defined as the task of classifying news as real or fake.
+           </p>
+        </div>
+    </div>
+</body>
+</html>
