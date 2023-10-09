@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+    <div class="header">
+
+        <nav>
+            <img src= "{{url_for('static', filename='/uploads/fakenews-1.jpg')}}" class="logo" >
+            <ul class="nav-page">  
+                <li><a href='/'>Home</a></li>              
+                <li><a href="/help">Help</a></li>
+                <li><a href="/about">About</a></li>
+            </ul>
+        </nav>
+
+        <video autoplay loop class="bg-video" muted plays-inline>
+            <source src="{{url_for('static', filename='/uploads/bg-video.mp4')}}" type="video/mp4">
+        </video>
+
+        <div class="content">
+            <h1>Fake News Detector</h1>
+            <form method='POST' action='/textfind'>
+                <input type="text" placeholder="Enter the news....." id="textnews" name="textnews" required>
+                <button type="submit">Find</button>
+            </form>
+        </div>
+
+    </div>
+</body>
+</html>

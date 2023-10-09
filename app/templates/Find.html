@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+    <div class="header">
+
+        <nav>
+            <img src= "{{url_for('static', filename='/uploads/fakenews-1.jpg')}}" class="logo" >
+            <ul class="nav-page">  
+                <li><a href='/'>Home</a></li>              
+                <li><a href="/help">Help</a></li>
+                <li><a href="/about">About</a></li>
+            </ul>
+        </nav>
+
+        <video autoplay loop class="bg-video" muted plays-inline>
+            <source src="{{url_for('static', filename='/uploads/bg-video.mp4')}}" type="video/mp4">
+        </video>
+
+        <div class="container-fluid" id="dis" name="display" style="color:white">
+            <h1>Fake News Detector</h1>
+            <h3>News: <br>
+                {{te}}
+            </h3>
+            <!--<h3>Result:</h3>-->
+            {% if cs<0.49 %}
+            <h4>FAKE</h4>
+            {% else %}
+            <h4>REAL</h4>
+            {% endif%}
+        </div>
+
+    </div>
+</body>
+</html>
